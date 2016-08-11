@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "5"
+  - "5.1"
+  - "4.2"
+
+install:
+  - npm install --only=dev
+
+after_script:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
+branches:
+  only:
+    - master

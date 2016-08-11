@@ -1,0 +1,35 @@
+{
+  "name": "react-native-cancelable-fetch",
+  "version": "0.1.0",
+  "description": "Cancelable fetch within a react native app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "coveralls": "*",
+    "jasmine-ajax": "^3.2.0",
+    "jest-cli": "^13.2.3",
+    "whatwg-fetch": "^1.0.0"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apentle/react-native-cancelable-fetch.git"
+  },
+  "keywords": [
+    "react-native",
+    "cancelable",
+    "fetch"
+  ],
+  "author": "Doan Nguyen <doannd@apentle.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apentle/react-native-cancelable-fetch/issues"
+  },
+  "homepage": "https://github.com/apentle/react-native-cancelable-fetch#readme"
+}
