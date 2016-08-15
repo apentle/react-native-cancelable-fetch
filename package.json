@@ -1,6 +1,6 @@
 {
   "name": "react-native-cancelable-fetch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cancelable fetch within a react native app",
   "main": "index.js",
   "scripts": {

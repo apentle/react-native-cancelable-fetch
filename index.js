@@ -3,9 +3,12 @@
 var _xhrs = []
 
 function remove(xhr) {
-  var i = _xhrs.indexOf(xhr)
-  if (i !== -1) {
-    _xhrs.splice(i, 1)
+  if (xhr.tag !== undefined) {
+    var i = _xhrs.indexOf(xhr)
+    /* istanbul ignore else  */
+    if (i !== -1) {
+      _xhrs.splice(i, 1)
+    }
   }
 }
 
@@ -98,8 +101,8 @@ module.exports.abort = function(tag) {
   for (var i = _xhrs.length - 1; i > -1; i--) {
     var xhr = _xhrs[i]
     if (xhr.tag === tag) {
-      xhr.abort()
       _xhrs.splice(i, 1)
+      xhr.abort()
     }
   }
 }

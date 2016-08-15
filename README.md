@@ -24,6 +24,30 @@ fetch.abort(1);
 
 ```
 
+Use `object` for `tag`
+```javascript
+const fetch = require('react-native-cancelable-fetch');
+...
+
+const Movies = React.createClass({
+  componentDidMount() {
+    // fetch movies
+    fetch(REQUEST_URL, null, this)
+      .then((response) => response.json())
+      .then((response) => this.setState({
+        dataSource: this.state.dataSource.cloneWithRows(response.movies),
+        loaded: true,
+      }));
+  },
+  componentWillUnmount() {
+    // Cancel request
+    fetch.abort(this);
+  },
+  ...
+});
+
+```
+
 ## API
-**fetch(input, init, tag)** make a request with a tag (`tag` can be number, string or object)
-**fetch.abort(tag)** cancel request by tag
+1. **fetch(input, init, tag)** make a request with a tag (`tag` can be number, string or object)
+2. **fetch.abort(tag)** cancel request by tag
