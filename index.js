@@ -93,7 +93,9 @@ module.exports = function(input, init, tag) {
       xhr.setRequestHeader(name, value)
     })
 
-    xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit)
+    var body = (init === null || typeof init.body === 'undefined') ? null : init.body;
+
+    xhr.send(body)
   })
 }
 
